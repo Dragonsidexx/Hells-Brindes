@@ -1,0 +1,63 @@
+body {
+    background-color: rgb(27, 25, 25);
+    font-family: Arial, sans-serif;
+    color: aliceblue;
+}
+
+
+hr{
+    border-color: aqua;
+}
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: red;
+}
+
+table {
+    margin: 0 auto;
+    width: 80%;
+    border-collapse: collapse;
+    background-color: black;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    background-color: black;
+    color: white;
+}
+
+th {
+    background-color: black;
+    color: white;
+}
+
+/* Ajuste para remover o fundo branco nas linhas da tabela */
+table tr:nth-child(even) {
+    background-color: #333333; /* Coloque um tom de preto ou cinza escuro */
+}
+
+.button {
+    text-decoration: none;
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    border-radius: 15px;
+    background-color: black;
+    color: red;
+    
+}
+
+.button:hover {
+    color: blueviolet;
+    background-color: blue;
+    border-radius: 15px;
+}
+
+/* Centralizar o texto do total de receitas */
+.total-receitas {
+    text-align: center;
+    color: white;
+    margin-top: 20px;
+}

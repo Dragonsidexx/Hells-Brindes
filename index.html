@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="logo.jpeg" type="image/x-icon">
+    <title>Hells Brindes</title>
+    <style>
+        :root {
+            --primary-color: #ff6600;
+            --secondary-color: #921111;
+            --background-color: #f0f0f0;
+            --text-color: #333;
+            --button-color: #4CAF50;
+            --button-hover-color: #45a049;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .logo:hover {
+            color: var(--secondary-color);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .search-cart {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .search-input {
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 15px;
+            width: 100%;
+            max-width: 200px;
+        }
+
+        .search-input:hover, .search-input:focus {
+            border-color: var(--primary-color);
+            outline: none;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .carousel {
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 2rem;
+        }
+
+        .carousel-inner {
+            display: flex;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .product {
+            flex: 0 0 100%;
+            padding: 1rem;
+            box-sizing: border-box;
+            background-color: #0c0c35;
+            color: #e7e7e7;
+        }
+
+        .product img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+
+        .product h3 {
+            margin: 0.5rem 0;
+            font-size: 1rem;
+        }
+
+        .carousel-control {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0,0,0,0.5);
+            color: white;
+            padding: 0.5rem;
+            text-decoration: none;
+            font-size: 1.5rem;
+            z-index: 2;
+        }
+
+        .carousel-control.prev { left: 0; }
+        .carousel-control.next { right: 0; }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .category-item {
+            position: relative;
+            height: 200px;
+            border-radius: 4px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 1rem;
+            color: white;
+            text-align: left;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .category-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        .category-item h3, .category-item p {
+            position: relative;
+            z-index: 2;
+            margin: 0;
+        }
+
+        .category-item h3 {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .category-item p {
+            font-size: 0.9rem;
+        }
+
+        .button {
+            background-color: var(--button-color);
+            color: white;
+            border-radius: 12px;
+            border: none;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: rgb(63, 238, 63);
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 1rem;
+        }
+
+        .person {
+            margin-left: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .nav-links, .search-cart {
+                margin-top: 1rem;
+            }
+
+            .search-input {
+                max-width: 100%;
+            }
+
+            .product {
+                flex: 0 0 100%;
+            }
+        }
+
+        @media (min-width: 769px) {
+            .product {
+                flex: 0 0 50%;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .product {
+                flex: 0 0 25%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#" class="logo">HELLS BRINDES</a>
+            <div class="nav-links">
+                <a href="#">PRODUTOS</a>
+                <a href="#">LANÇAMENTOS</a>
+                <a href="about.html">SOBRE</a>
+            </div>
+            <div class="search-cart">
+                <input type="search" placeholder="O que você procura?" class="search-input">
+                <a href="checkout.php" class="cart-icon">🛒</a>
+                <a href="log.html" class="person">🧑</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="carousel">
+            <div class="carousel-inner">
+                <div class="product">
+                    <img src="prod1.jpg" alt="HB41349S - MORIMOTO. Kit para sushi">
+                    <h3>MORIMOTO. Kit para sushi</h3>
+                    <button class="button">VEJA AGORA</button>
+                </div>
+                <div class="product">
+                    <img src="prod2.jpg" alt="HB56249S - PYRUS. Marmita 1L">
+                    <h3>PYRUS. Marmita 1L</h3>
+                    <button class="button">VEJA AGORA</button>
+                </div>
+                <div class="product">
+                    <img src="prod3.jpg" alt="HB55014S - Kit pulseira, chaveiro e relógio">
+                    <h3>Kit pulseira, chaveiro e relógio</h3>
+                    <button class="button">VEJA AGORA</button>
+                </div>
+                <div class="product">
+                    <img src="prod4.jpg" alt="HB37060 - Carregador via Indução">
+                    <h3>Carregador via Indução</h3>
+                    <button class="button">VEJA AGORA</button>
+                </div>
+                <div class="product">
+                    <img src="prod5.jpg" alt="HB70941 - Relógio de Mesa Premium">
+                    <h3>Relógio de Mesa Premium</h3>
+                    <button class="button">VEJA AGORA</button>
+                </div>
+                <div class="product">
+                    <img src="prod6.jpg" alt="HB50941 - Conjunto de Baralhos Premium">
+                    <h3>Conjunto de Baralhos Premium</h3>
+                    <button class="button">VEJA AGORA</button>
+                </div>
+                <div class="product">
+                    <img src="prod7.jpg" alt="HB69841 - Jogo de Dominó Premium">
+                    <h3>Jogo de Dominó Premium</h3>
+                    <button class="button">VEJA AGORA</button>
+                </div>
+                <div class="product">
+                    <img src="prod8.jpg" alt="HB00941 - Jogo da Velha Premium">
+                    <h3>Jogo da Velha Premium</h3>
+                    <button class="button">VEJA AGORA</button>
+                </div>
+            </div>
+            <a href="#" class="carousel-control prev">&lt;</a>
+            <a href="#" class="carousel-control next">&gt;</a>
+        </div>
+
+        <div class="category-grid">
+            <div class="category-item" style="background-image: url('cxs.jpg');">
+                <p>FAÇA BARULHO COM</p>
+                <h3>CAIXAS DE SOM</h3>
+            </div>
+            <div class="category-item" style="background-image: url('/placeholder.svg?height=200&width=300&text=Informática');">
+                <p>OS MELHORES BRINDES DE</p>
+                <h3>INFORMÁTICA E TELEFONIA</h3>
+            </div>
+            <div class="category-item" style="background-image: url('/placeholder.svg?height=200&width=300&text=Power+Bank');">
+                <p>SEMPRE LIGADOS NO</p>
+                <h3>POWER BANK</h3>
+            </div>
+            <div class="category-item" style="background-image: url('/placeholder.svg?height=200&width=300&text=Relógio');">
+                <p>SEJA PRECISO COM</p>
+                <h3>RELÓGIOS</h3>
+            </div>
+            <div class="category-item" style="background-image: url('/placeholder.svg?height=200&width=300&text=Squeeze');">
+                <p>UMA LINHA COMPLETA DE</p>
+                <h3>SQUEEZES E GARRAFAS</h3>
+            </div>
+            <div class="category-item" style="background-image: url('/placeholder.svg?height=200&width=300&text=Mochila');">
+                <p>VÁ JUNTO COM</p>
+                <h3>MOCHILAS E PASTAS</h3>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Hells Brindes. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const carousel = document.querySelector('.carousel-inner');
+            const products = document.querySelectorAll('.product');
+            const prevButton = document.querySelector('.carousel-control.prev');
+            const nextButton = document.querySelector('.carousel-control.next');
+            let currentIndex = 0;
+            let productsPerView = getProductsPerView();
+
+            function getProductsPerView() {
+                if (window.innerWidth >= 1024) return 4;
+                if (window.innerWidth >= 769) return 2;
+                return 1;
+            }
+
+            function showProducts(index) {
+                carousel.style.transform = `translateX(-${index * (100 / productsPerView)}%)`;
+            }
+
+            function updateCarousel() {
+                productsPerView = getProductsPerView();
+                currentIndex = Math.min(currentIndex, products.length - productsPerView);
+                showProducts(currentIndex);
+            }
+
+            prevButton.addEventListener('click', function(e) {
+                e.preventDefault();
+                currentIndex = Math.max(currentIndex - 1, 0);
+                showProducts(currentIndex);
+            });
+
+            nextButton.addEventListener('click', function(e) {
+                e.preventDefault();
+                currentIndex = Math.min(currentIndex + 1, products.length - productsPerView);
+                showProducts(currentIndex);
+            });
+
+            window.addEventListener('resize', updateCarousel);
+
+            // Initialize carousel
+            updateCarousel();
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchInput = document.querySelector('.search-input');
+
+            // Função para realizar a pesquisa
+            function performSearch(query) {
+                console.log(`Pesquisando por: ${query}`);
+                // Aqui você pode adicionar uma lógica para buscar os resultados da pesquisa
+                // Por exemplo, uma requisição a uma API ou filtro de produtos na página
+            }
+
+            // Evento para capturar entrada no campo de pesquisa
+            searchInput.addEventListener('input', function() {
+                const query = searchInput.value.trim();
+                if (query.length > 0) {
+                    performSearch(query);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

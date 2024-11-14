@@ -1,0 +1,38 @@
+body{
+    background-color: black;
+    color: white
+}
+
+.cad{
+    text-align: left;
+    align-items: left;
+}
+
+
+.txt{
+    color: white;
+    font-size: small;
+}
+
+
+.voltar{
+    text-align: center;
+    align-items: center;
+}
+
+
+
+.button{
+    background-color: black;
+    color: red;
+    border-radius: 15px;
+}
+
+.button:hover{
+background-color: blueviolet;
+color: red;
+}
+
+hr{
+    border-color:  gray
+}

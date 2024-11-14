@@ -1,0 +1,165 @@
+/* Reset do box-model */
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'SF Pro Text', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+}
+
+/* Estilo para a barra de navegação */
+nav ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav li {
+  position: relative;
+  padding: 10px 15px;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  display: block;
+}
+
+nav a:hover {
+  color: blueviolet;
+}
+
+/* Estilo para os submenus */
+.submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  color: white;
+  background-color: black;
+  border: 1px solid #ccc;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  width: 300px; /* Largura ajustada */
+  max-height: 300px; /* Altura máxima */
+  overflow-y: auto; /* Barra de rolagem */
+  border-radius: 4px; /* Bordas arredondadas */
+}
+
+/* Mostrar o submenu quando o item é hover */
+nav li:hover .submenu {
+  display: block;
+
+}
+
+/* Organizar submenu em duas colunas */
+.submenu {
+  display: none;
+  grid-template-columns: 1fr 1fr; /* Duas colunas */
+  gap: 10px; /* Espaçamento entre os itens */
+  padding: 10px;
+  text-decoration: none;
+
+}
+
+/* Estilo dos itens do submenu */
+.submenu li {
+  padding: 5px;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.submenu li a {
+  color: white;
+  text-decoration: none;
+  display: block;
+}
+
+.submenu li a:hover {
+  color: blueviolet;
+}
+
+/* Estilo específico para os itens de submenus */
+#follow {
+  position: relative;
+}
+
+#follow a {
+  padding-right: 20px;
+}
+
+#follow::after {
+  content: '▼';
+  font-size: 12px;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Estilo específico para o submenu de Produtos */
+#products {
+  position: relative;
+}
+
+#products a {
+  padding-right: 20px;
+}
+
+#products::after {
+  content: '▼';
+  font-size: 12px;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Estilo da lista */
+ul {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr); /* Uma coluna */
+  gap: 20px; /* Espaço entre os itens */
+  padding: 0;
+  list-style: none; /* Remove o estilo de marcador padrão */
+}
+
+ul li {
+  font-size: 16px;
+  color: #333;
+  display: flex;
+  align-items: center;
+}
+
+ul li::before {
+  content: '•'; /* Símbolo de marcador */
+  color: rgba(255, 166, 0, 0.623); /* Cor do marcador */
+  font-size: 18px; /* Tamanho do marcador */
+  margin-right: 10px; /* Espaço entre o marcador e o texto */
+}
+
+/* Responsividade para telas menores */
+@media screen and (max-width: 768px) {
+  ul {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+
+

@@ -1,0 +1,122 @@
+body {
+    margin: 0;
+    background: #6669bb;
+    font-family: "Poppins", sans-serif;
+}
+
+.sidebar {
+    position: fixed;
+    height: 100%;
+    width: 260px;
+    background: #11101d;
+    padding: 15px;
+    transition: width 0.3s;
+    z-index: 99;
+}
+
+.sidebar.close {
+    width: 200px;
+}
+
+.inner .logo {
+    font-size: 25px;
+    color: #ffffff;
+    text-align: center;
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.menu-content {
+    margin-top: 20px;
+    overflow-y: auto;
+}
+
+.menu-items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-items li {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.menu-items button {
+    background: none;
+    border: none;
+    color: #8f8d9b;
+    padding: 10px;
+    width: 100%;
+    text-align: left;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: background 0.3s;
+    outline: none;
+}
+
+.menu-items button:hover {
+    background: #2f2b43;
+    color: #f9f9f9;
+}
+
+.submenu-container {
+    position: relative;
+}
+
+.submenu {
+    display: none;
+    background: #2f2b43;
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 5px;
+}
+
+.submenu li {
+    padding: 8px;
+    font-size: 14px;
+}
+
+
+.submenu.open {
+    display: block;
+}
+
+
+.submenu li a {
+    color: #8f8d9b;
+    text-decoration: none;
+}
+
+.submenu li a:hover {
+    color: #f9f9f9;
+}
+
+.main {
+    padding-left: 280px;
+    background: linear-gradient(90deg, #ad3e16, #925d28, #5e4619, #29241d, #000000);
+    color: aqua;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.dash {
+    font-size: 40px;
+    color: yellow;
+}
+
+/* Estilo para alinhar a seta à direita */
+.menu-items button i.chevron-icon {
+    margin-left: auto;
+}
+

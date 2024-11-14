@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="dashbord.css" />
+    <link rel="shortcut icon" href="logo.jpeg" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+</head>
+<body>
+    <aside class="sidebar close">
+        <div class="inner">
+            <a href="index.html" class="logo">Hells Brindes</a>
+            <div class="menu-content">
+                <ul class="menu-items">
+                    <li><a href="novos_clientes.php"><button class="left-aligned"><i class="fas fa-user-plus"></i> Cadastrar Cliente</button></a></li>
+
+                    <!-- Submenu Clientes e Projetos -->
+                    <li class="submenu-container">
+                        <button onclick="toggleSubMenu('submenu-clientes')"><i class="fas fa-briefcase"></i> Clientes <i class="fas fa-chevron-down chevron-icon"></i></button>
+                        <ul id="submenu-clientes" class="submenu">
+                            <li><a href="nossos_clientes.php">Nossos Clientes</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Submenu Como utilizar? -->
+                    <li class="submenu-container">
+                        <button onclick="toggleSubMenu('submenu-utilizar')"><i class="fas fa-question-circle"></i> Como utilizar? <i class="fas fa-chevron-down chevron-icon"></i></button>
+                        <ul id="submenu-utilizar" class="submenu">
+                            <li><a href="tutorial.html">Tutorial de Uso</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="requisições_para_a_ti.html"><button><i class="fas fa-envelope"></i> Requisições para a T.I</button></a></li>
+                </ul>
+            </div>
+        </div>
+    </aside>
+
+    <main class="main">
+        <div class="dash">Dashboard</div>
+    </main>
+    <script>
+        function toggleSubMenu(id) {
+            const submenu = document.getElementById(id);
+            submenu.style.display = submenu.style.display === "block" ? "none" : "block";
+        }
+    </script>
+
+</body>
+</html>

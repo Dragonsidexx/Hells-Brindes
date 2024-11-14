@@ -1,0 +1,151 @@
+/* Estilos gerais */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: gray;
+  color: white;
+}
+
+/* Barra de navegação */
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #333;
+  padding: 10px;
+}
+
+.navbar-content {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  justify-content: space-between;
+}
+
+/* Estilos para o logotipo */
+.logo {
+  display: flex;
+  justify-content: center;
+}
+
+.logo-img {
+  height: 40px;
+  width: auto;
+}
+
+/* Posiciona o botão hambúrguer totalmente à esquerda */
+#menuToggle {
+  position: fixed;
+  top: 30px;
+  left: 0;
+  margin-left: 10px; /* Ajuste opcional para afastar ligeiramente da borda */
+}
+
+/* Input invisível que controla o estado do menu */
+#menuToggle input {
+  display: block;
+  position: absolute;
+  width: 40px;
+  height: 32px;
+  top: -9px;
+  left: -15px;
+  cursor: pointer;
+  opacity: 0;
+  z-index: 2;
+}
+
+/* Barras do botão hambúrguer */
+#menuToggle span {
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  background: #007bff;
+  border-radius: 3px;
+  transition: all 0.6s ease;
+  transform-origin: 5px 0px;
+}
+
+#menuToggle span:nth-last-child(1) {
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2) {
+  transform-origin: 0% 100%;
+}
+
+/* Animações para o botão quando clicado */
+#menuToggle input:checked ~ span {
+  background: red;
+  transform: rotate(45deg) translate(-2px, 1px);
+}
+
+#menuToggle input:checked ~ span:nth-last-child(3) {
+  opacity: 0;
+}
+
+#menuToggle input:checked ~ span:nth-last-child(2) {
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+/* Estilos do menu */
+#menu {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  width: 200px;
+  padding: 60px 20px;
+  background: #333;
+  list-style: none;
+  border-radius: 5px;
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+  display: none;
+}
+
+#menuToggle input:checked ~ #menu {
+  transform: translateX(0);
+  opacity: 1;
+  display: block;
+}
+
+/* Estilo dos itens do menu */
+#menu li {
+  margin: 10px 0;
+  font-size: 18px;
+  text-align: center;
+  opacity: 0;
+  animation: fadeIn 1.0s ease forwards;
+}
+
+#menu li:nth-child(1) { animation-delay: 0.1s; }
+#menu li:nth-child(2) { animation-delay: 0.2s; }
+#menu li:nth-child(3) { animation-delay: 0.3s; }
+
+/* Animação de fade-in dos itens do menu */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* Links do menu e da barra de navegação */
+.log {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+  transition: color 0.3s;
+}
+
+.log:hover {
+  color: red;
+}
+
+/* Estilo dos links adicionais à direita */
+.navbar-links {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+

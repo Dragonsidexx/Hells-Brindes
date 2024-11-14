@@ -1,0 +1,61 @@
+body{
+    background-color: black;
+    color: white;
+}
+
+.title{
+    color: green;
+    text-align: center;
+}
+
+hr{
+    border-color: gray;
+}
+
+.formas{
+    text-align: center;
+    color: aqua;
+
+}
+
+
+.div{
+    align-items: center;
+    text-align: center;
+    
+}
+
+.email{
+    background-color: red;
+    color: aqua;
+    border-radius: 5px;
+    font-size: x-large;
+}
+
+.email:hover{
+    background-color: blueviolet;
+    cursor: pointer;
+}
+
+.telefone{
+    background-color: green;
+    color: aqua;
+    border-radius: 5px;
+    font-size: x-large;
+}
+
+.telefone:hover{
+    background-color: blueviolet;
+    cursor: pointer;
+}
+
+.button{
+    background-color: black;
+    color: red;
+    border-radius: 5px;
+    font-size: x-large;
+}
+
+.button:hover{
+    background-color: blueviolet;
+}
